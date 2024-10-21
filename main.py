@@ -30,7 +30,6 @@ def add_game(appid, guild_id):
     c.execute("INSERT OR IGNORE INTO games (appid, guild_id, last_update) VALUES (?, ?, ?)", (appid, guild_id, 0))
     conn.commit()
 
-    # The check_game_updates function will return title and url based on update logic
     if title and url:
         print(f"Latest update for game {appid}: {title} - {url}")
         return title, url
