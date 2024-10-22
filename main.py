@@ -164,6 +164,7 @@ async def on_message(message):
 # Start the bot
 async def main():
     async with client:
+        client.loop.create_task(get_games())
         await client.start(DISCORD_TOKEN)
 
 
